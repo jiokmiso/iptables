@@ -20,7 +20,7 @@
 include_recipe 'iptables::_package'
 
 service 'iptables' do
-  action [:disable, :stop]
+  action [:stop, :disable]
   supports status: true, start: true, stop: true, restart: true
   only_if { node['platform_family'] == 'rhel' }
 end
